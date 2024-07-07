@@ -1,0 +1,126 @@
+/*visual guideline*/
+p {
+  /* font-family: "Atlas Grotesk Web Light Regular"; */
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+}
+
+.content {
+  max-width: 640px;
+  margin: auto;
+  text-align: left;
+  /* padding: 1em 0; */
+  padding-top: 1.5em;
+  padding-bottom: 3em;
+}
+
+.header {
+  max-width: 680px;
+  margin: auto;
+  text-align: center;
+  padding-top: 3em;
+}
+
+.subhead {
+  padding-top: 1em;
+}
+
+.byline {
+  font-size: 12px;
+}
+
+/* media queries*/
+@media (max-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+  .content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.hidden {
+  visibility: hidden;
+}
+
+.step {
+  margin-bottom: 35vh;
+}
+
+/*graph css stuff*/
+/*chart css stuff*/
+
+.chart__tables {
+  width: 100%;
+  overflow-x: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.tables__container {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  /* background: #f7f7f7; */
+  border-radius: 8px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.tables__container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tables__container th {
+  border-bottom: 2.5px solid #ddd;
+  padding: 0.75em;
+  color: black;
+  font-weight: 600;
+  /* text-align: center; */
+}
+
+.tables__container th,
+.tables__container td {
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  width: 20%;
+}
+
+/* .tables__container tr:nth-child(even) {
+  background: #f2f2f2;
+} */
+
+.tables__container td {
+  border-bottom: 1px solid #c7c7c7;
+  padding-left: 0.75em;
+  padding-top: 0.45em;
+  padding-bottom: 0.45em;
+}
+
+.highlight {
+  background-color: yellow;
+}
