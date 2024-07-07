@@ -68,7 +68,8 @@
   text-align: center;
   padding: 1.2em !important;
   color: 747474;
-  background-color: #e6e6e6f3;
+  background-color: #fff;
+  box-shadow: 0 4px 12px #00000035;
 }
 
 /* .sticky-thing > canvas {
