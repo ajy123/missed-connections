@@ -159,6 +159,7 @@ h1 {
 }
 
 .borough {
+  margin-top: 0.5em;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
@@ -172,6 +173,9 @@ h1 {
   flex: 25%;
   /* background-color: blue; */
   margin-bottom: 5em;
+  border-left: 4px solid rgba(255, 2, 2, 0.63);
+  background: #f3f3f3;
+  /* opacity: 0.5; */
 }
 
 /* #manhattan {
