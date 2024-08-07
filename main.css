@@ -4,6 +4,12 @@ p {
   font-family: "Inter";
   font-weight: 400;
   font-style: normal;
+  margin-bottom: 0.5em;
+}
+
+iframe {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 body {
@@ -138,3 +144,52 @@ h1 {
   background-color: rgba(255, 234, 184, 0.874);
   /* text-decoration: underline; */
 }
+
+.container {
+  display: flex;
+}
+
+.content.container {
+  padding-bottom: 1em !important;
+}
+
+.borough-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.borough {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+.left-column {
+  flex: 75%;
+  /* background-color: #ddd; */
+}
+
+.right-column {
+  flex: 25%;
+  /* background-color: blue; */
+  margin-bottom: 5em;
+}
+
+/* #manhattan {
+  background-color: #0081a7;
+}
+
+#brooklyn {
+  background-color: #00afb9;
+}
+
+#queens {
+  background-color: #ffed4b;
+}
+
+#bronx {
+  background-color: #f4b54e;
+}
+
+#statenIsland {
+  background-color: #fe8478;
+} */

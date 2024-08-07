@@ -72,10 +72,15 @@ var data = [
 ];
 
 function tabulate(data, columns) {
-  var table = d3.select(".tables__container");
+  var table = d3
+    .select(".tables__container")
+    .append("table")
+    .attr("class", "min-w-full divide-y divide-gray-200");
   //   var table = d3.select("#data-table");
-  var thead = table.append("thead");
-  var tbody = table.append("tbody");
+  var thead = table.append("thead").attr("class", "bg-gray-50");
+  var tbody = table
+    .append("tbody")
+    .attr("class", "bg-white divide-y divide-gray-200");
 
   // append the header row
   thead
@@ -84,6 +89,10 @@ function tabulate(data, columns) {
     .data(columns)
     .enter()
     .append("th")
+    .attr(
+      "class",
+      "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+    )
     .text(function (column) {
       return column;
     });
@@ -101,6 +110,10 @@ function tabulate(data, columns) {
     })
     .enter()
     .append("td")
+    .attr(
+      "class",
+      "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+    )
     .text(function (d) {
       return d.value;
     });

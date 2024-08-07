@@ -1,11 +1,16 @@
 console.log("main.js is connected");
 function hideNote() {
-  d3.select("#brooklyn").style("opacity", 0.5);
-  d3.select("#manhattan").style("opacity", 0.5);
-  d3.select("#longestPost").style("opacity", 0.5);
-  d3.select("#queens").style("opacity", 0.5);
-  d3.select("#bronx").style("opacity", 0.5);
-  d3.select("#statenisland").style("opacity", 0.5);
+  d3.select("#manhattan_post").style("opacity", 0.5);
+  d3.select("#brooklyn_post").style("opacity", 0.5);
+  d3.select("#bronx_post").style("opacity", 0.5);
+  d3.select("#queens_post").style("opacity", 0.5);
+  d3.select("#statenIsland_post").style("opacity", 0.5);
+}
+
+function setVisibility(selector, hidden) {
+  d3.select(selector)
+    .classed("hidden", hidden)
+    .style("opacity", hidden ? 0.2 : 1);
 }
 
 function removeHighlight() {
@@ -27,100 +32,38 @@ d3.select("#step-one").on("stepout", function (e) {
 
 d3.select("#step-one").on("stepin", function (e) {
   console.log("Got to step one");
-  // undo changes from step two?
-
-  // // do changes for step one
-  // d3.select("#brooklyn").classed("hidden", true);
-  d3.select("#brooklyn").style("opacity", 0.2);
-
-  d3.select("#manhattan").classed("hidden", false);
-  d3.select("#manhattan").style("opacity", 1);
-  d3.select("#longestPost").style("opacity", 1);
-
-  // d3.select("#queens").classed("hidden", true);
-  d3.select("#queens").style("opacity", 0.2);
-  // d3.select("#bronx").classed("hidden", true);
-  d3.select("#bronx").style("opacity", 0.2);
-  d3.select("#statenisland").style("opacity", 0.2);
-  // d3.select("#statenisland").classed("hidden", true);
+  const elements = {
+    "#manhattan_post": false,
+    "#brooklyn_post": true,
+    "#queens_post": true,
+    "#bronx_post": true,
+    "#statenIsland_post": true,
+  };
+  for (const [selector, hidden] of Object.entries(elements)) {
+    setVisibility(selector, hidden);
+  }
 });
 
+// mnahattan post example
 d3.select("#step-two").on("stepin", function (e) {
-  // // undo changes from step one?
-
+  // undo changes from step one
   // do changes for step two
-  console.log("Got to step two");
-  // d3.select("#manhattan").classed("hidden", true);
-  // d3.select("#longestPost").classed("hidden", true);
-  d3.select("#manhattan").style("opacity", 0.2);
-  d3.select("#longestPost").style("opacity", 0.2);
-
-  d3.select("#brooklyn").classed("hidden", false);
-  d3.select("#brooklyn").style("opacity", 1);
-
-  // d3.select("#queens").classed("hidden", true);
-  d3.select("#queens").style("opacity", 0.2);
-  // d3.select("#bronx").classed("hidden", true);
-  d3.select("#bronx").style("opacity", 0.2);
-  // d3.select("#statenisland").classed("hidden", true);
-  d3.select("#statenisland").style("opacity", 0.2);
+  d3.selectAll("[id='#manhattan_post'][id='#manhattan_12pm']").style(
+    "opacity",
+    1
+  );
+  d3.select("#manhattan_post").style("opacity", 0.2);
 });
+// only select element w multiple id d3.selectAll("[id='id1'][id='id2']")
 
 d3.select("#step-three").on("stepin", function (e) {
   // undo changes from step two
-  // d3.select("#manhattan").classed("hidden", true);
-  // d3.select("#longestPost").classed("hidden", true);
-  d3.select("#manhattan").style("opacity", 0.2);
-  d3.select("#longestPost").style("opacity", 0.2);
-
-  // d3.select("#brooklyn").classed("hidden", true);
-  d3.select("#brooklyn").style("opacity", 0.2);
-
-  d3.select("#queens").classed("hidden", false);
-  d3.select("#queens").style("opacity", 1);
-
-  // d3.select("#bronx").classed("hidden", true);
-  d3.select("#bronx").style("opacity", 0.2);
-  // d3.select("#statenisland").classed("hidden", true);
-  d3.select("#statenisland").style("opacity", 0.2);
+  // do changes for step threee
 });
 
-d3.select("#step-four").on("stepin", function (e) {
-  // d3.select("#manhattan").classed("hidden", true);
-  // d3.select("#longestPost").classed("hidden", true);
-  d3.select("#manhattan").style("opacity", 0.2);
-  d3.select("#longestPost").style("opacity", 0.2);
+d3.select("#step-four").on("stepin", function (e) {});
 
-  // d3.select("#brooklyn").classed("hidden", true);
-  d3.select("#brooklyn").style("opacity", 0.2);
-
-  // d3.select("#queens").classed("hidden", true);
-  d3.select("#queens").style("opacity", 0.2);
-
-  d3.select("#bronx").classed("hidden", false);
-  d3.select("#bronx").style("opacity", 1);
-
-  // d3.select("#statenisland").classed("hidden", true);
-  d3.select("#statenisland").style("opacity", 0.2);
-});
-
-d3.select("#step-five").on("stepin", function (e) {
-  // undo changes from step two
-  // d3.select("#manhattan").classed("hidden", true);
-  // d3.select("#longestPost").classed("hidden", true);
-  d3.select("#manhattan").style("opacity", 0.2);
-  d3.select("#longestPost").style("opacity", 0.2);
-
-  // d3.select("#brooklyn").classed("hidden", true);
-  d3.select("#brooklyn").style("opacity", 0.2);
-
-  // d3.select("#queens").classed("hidden", true);
-  d3.select("#queens").style("opacity", 0.2);
-  d3.select("#bronx").style("opacity", 0.2);
-
-  d3.select("#statenisland").classed("hidden", false);
-  d3.select("#statenisland").style("opacity", 1);
-});
+d3.select("#step-five").on("stepin", function (e) {});
 
 d3.select("#noun-step-one").on("stepout", function (e) {
   console.log("back");
