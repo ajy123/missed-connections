@@ -20,7 +20,6 @@ function setVisibility(selector, hidden) {
 }
 
 function removeHighlight() {
-  console.log("remove highlight");
   d3.selectAll("td").classed("highlight", false);
 }
 
@@ -37,7 +36,6 @@ d3.select("#step-one").on("stepout", function (e) {
 });
 
 d3.select("#step-one").on("stepin", function (e) {
-  console.log("Got to step one");
   const elements = {
     "#manhattan_post": false,
     "#manhattan_12pm": false,
@@ -70,7 +68,6 @@ d3.select("#step-two").on("stepin", function (e) {
 d3.select("#step-three").on("stepin", function (e) {
   // undo changes from step two
   // do changes for step three
-
   const elements = {
     "#manhattan_post": true,
     "#manhattan_12pm": true,
@@ -106,20 +103,17 @@ d3.select("#step-four").on("stepin", function (e) {
   }
 });
 
-// d3.select("#step-five").on("stepin", function (e) {});
-
 d3.select("#noun-step-one").on("stepout", function (e) {
   console.log("back");
   if (e.detail.direction === "up") {
     console.log("up");
     // undo the changes from step one
-    hideNote();
+    removeHighlight();
   }
 });
 
 d3.select("#noun-step-one").on("stepin", function (e) {
   // highlight all the similarity across five boroughs
-  console.log("This is noun step1");
   d3.selectAll("td").each(function (d) {
     if (
       (d.column === "Manhattan" && d.value === "time") ||
@@ -142,7 +136,6 @@ d3.select("#noun-step-two").on("stepin", function (e) {
   removeHighlight();
 
   // do changes for step two
-  console.log("This is noun step2");
   d3.selectAll("td").each(function (d) {
     if (
       (d.column === "Manhattan" && d.value === "time") ||
@@ -176,11 +169,10 @@ d3.select("#noun-step-two").on("stepin", function (e) {
 });
 
 d3.select("#noun-step-three").on("stepin", function (e) {
-  // // undo changes from step one
+  // // undo changes
   removeHighlight();
 
-  // do changes for step two
-  console.log("This is noun step2");
+  // do changes for step three
   d3.selectAll("td").each(function (d) {
     if (
       d &&
@@ -206,11 +198,10 @@ d3.select("#noun-step-three").on("stepin", function (e) {
 });
 
 d3.select("#noun-step-four").on("stepin", function (e) {
-  // // undo changes from step one
+  // undo changes
   removeHighlight();
 
-  // do changes for step two
-  console.log("This is noun step2");
+  // do changes for step four
   d3.selectAll("td").each(function (d) {
     // remove previous step class
     if (d && d.column === "Queens" && d.value === "smile") {
@@ -224,7 +215,7 @@ d3.select("#noun-step-four").on("stepin", function (e) {
 });
 
 d3.select("#noun-step-five").on("stepin", function (e) {
-  // // undo changes from step one
+  // // undo changes
   removeHighlight();
   d3.selectAll("td").each(function (d) {
     if (d && d.column === "Bronx" && d.value === "nail") {

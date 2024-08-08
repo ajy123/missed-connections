@@ -140,7 +140,6 @@ renderClothingChips();
 resetBtn.addEventListener("click", () => {
   // remove all the borough highlight
   const boroughSpan = document.getElementsByClassName("borough");
-  console.log(boroughSpan);
   for (let span of boroughSpans) {
     span.classList.remove("bg-yellow-200");
     span.classList.add("bg-blue-600");

@@ -1,8 +1,6 @@
 /*visual guideline*/
 p {
-  /* font-family: "Atlas Grotesk Web Light Regular"; */
   font-family: "Inter";
-  /* font-weight: 400; */
   font-style: normal;
   margin-bottom: 0.5em;
 }
@@ -15,22 +13,18 @@ iframe {
 body {
   margin: 0;
   font-size: 18px;
-  /* font-family: Georgia, 'Times New Roman', Times, serif; */
   text-rendering: optimizeLegibility;
 }
 
 h1 {
   font-family: "Karla", sans-serif;
   font-weight: 600;
-  /* z-index: 2;
-  position: relative; */
 }
 
 .content {
   max-width: 640px;
   margin: auto;
   text-align: left;
-  /* padding: 1em 0; */
   padding-top: 1.5em;
   padding-bottom: 3em;
 }
@@ -65,10 +59,6 @@ h1 {
   }
 }
 
-/* .hidden {
-  display: none;
-} */
-
 .hidden {
   visibility: hidden;
 }
@@ -84,8 +74,6 @@ h1 {
 .emoji {
   transition: transform 0.5s, opacity 0.5s;
 }
-/*graph css stuff*/
-/*chart css stuff*/
 
 .chart__tables {
   width: 100%;
@@ -103,7 +91,6 @@ h1 {
   max-width: 100%;
   overflow-x: auto;
   padding: 1rem;
-  /* background: #f7f7f7; */
   border-radius: 8px;
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
@@ -119,7 +106,6 @@ h1 {
   padding: 0.75em;
   color: black;
   font-weight: 600;
-  /* text-align: center; */
 }
 
 .tables__container th,
@@ -128,10 +114,6 @@ h1 {
   font-family: "Inter", sans-serif;
   width: 20%;
 }
-
-/* .tables__container tr:nth-child(even) {
-  background: #f2f2f2;
-} */
 
 .tables__container td {
   border-bottom: 1px solid #c7c7c7;
@@ -142,7 +124,6 @@ h1 {
 
 .highlight {
   background-color: rgba(255, 234, 184, 0.874);
-  /* text-decoration: underline; */
 }
 
 .container {
@@ -166,7 +147,6 @@ h1 {
 
 .left-column {
   flex: 75%;
-  /* background-color: #ddd; */
 }
 
 .right-column {
@@ -177,9 +157,6 @@ h1 {
   /* border-left: 4px solid rgba(255, 2, 2, 0.63);
   background: #f3f3f3; */
   /* opacity: 0.5; */
-}
-
-a {
 }
 
 /* #manhattan {
