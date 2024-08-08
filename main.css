@@ -2,7 +2,7 @@
 p {
   /* font-family: "Atlas Grotesk Web Light Regular"; */
   font-family: "Inter";
-  font-weight: 400;
+  /* font-weight: 400; */
   font-style: normal;
   margin-bottom: 0.5em;
 }
@@ -177,6 +177,9 @@ h1 {
   /* border-left: 4px solid rgba(255, 2, 2, 0.63);
   background: #f3f3f3; */
   /* opacity: 0.5; */
+}
+
+a {
 }
 
 /* #manhattan {
