@@ -5,6 +5,24 @@ p {
   margin-bottom: 0.5em;
 }
 
+.train {
+  font-size: 30px;
+  position: absolute;
+  left: 100px;
+  animation: moveTrain 20s infinite ease-in-out;
+}
+@keyframes moveTrain {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(70vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 iframe {
   margin-top: 2em;
   margin-bottom: 2em;

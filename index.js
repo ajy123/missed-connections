@@ -1,4 +1,3 @@
-console.log("main.js is connected");
 function hideNote() {
   d3.select("#manhattan_post").style("opacity", 0.5);
   d3.select("#brooklyn_post").style("opacity", 0.5);
