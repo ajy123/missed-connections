@@ -5,6 +5,12 @@ function hideNote() {
   d3.select("#bronx_post").style("opacity", 0.5);
   d3.select("#queens_post").style("opacity", 0.5);
   d3.select("#statenIsland_post").style("opacity", 0.5);
+
+  d3.select("#manhattan_12pm").style("opacity", 0.5);
+  d3.select("#manhattan_9am").style("opacity", 0.5);
+  d3.select("#manhattan_12am").style("opacity", 0.5);
+  d3.select("#brooklyn_3am").style("opacity", 0.5);
+  d3.select("#statenIsland_6pm").style("opacity", 0.5);
 }
 
 function setVisibility(selector, hidden) {
@@ -34,6 +40,11 @@ d3.select("#step-one").on("stepin", function (e) {
   console.log("Got to step one");
   const elements = {
     "#manhattan_post": false,
+    "#manhattan_12pm": false,
+    "#manhattan_9am": false,
+    "#manhattan_12am": false,
+    "#brooklyn_3am": true,
+    "#statenIsland_6pm": true,
     "#brooklyn_post": true,
     "#queens_post": true,
     "#bronx_post": true,
@@ -48,22 +59,54 @@ d3.select("#step-one").on("stepin", function (e) {
 d3.select("#step-two").on("stepin", function (e) {
   // undo changes from step one
   // do changes for step two
-  d3.selectAll("[id='#manhattan_post'][id='#manhattan_12pm']").style(
-    "opacity",
-    1
-  );
+  d3.select("#manhattan_12pm").style("opacity", 1);
+  d3.select("#manhattan_9am").style("opacity", 0.2);
+  d3.select("#manhattan_12am").style("opacity", 0.2);
+  d3.select("#statenIsland_6pm").style("opacity", 0);
+
   d3.select("#manhattan_post").style("opacity", 0.2);
 });
-// only select element w multiple id d3.selectAll("[id='id1'][id='id2']")
 
 d3.select("#step-three").on("stepin", function (e) {
   // undo changes from step two
-  // do changes for step threee
+  // do changes for step three
+
+  const elements = {
+    "#manhattan_post": true,
+    "#manhattan_12pm": true,
+    "#manhattan_9am": true,
+    "#manhattan_12am": true,
+    "#brooklyn_3am": false,
+    "#statenIsland_6pm": true,
+    "#brooklyn_post": true,
+    "#queens_post": true,
+    "#bronx_post": true,
+    "#statenIsland_post": true,
+  };
+  for (const [selector, hidden] of Object.entries(elements)) {
+    setVisibility(selector, hidden);
+  }
 });
 
-d3.select("#step-four").on("stepin", function (e) {});
+d3.select("#step-four").on("stepin", function (e) {
+  const elements = {
+    "#manhattan_post": true,
+    "#manhattan_12pm": true,
+    "#manhattan_9am": true,
+    "#manhattan_12am": true,
+    "#brooklyn_3am": true,
+    "#statenIsland_6pm": false,
+    "#brooklyn_post": true,
+    "#queens_post": true,
+    "#bronx_post": true,
+    "#statenIsland_post": true,
+  };
+  for (const [selector, hidden] of Object.entries(elements)) {
+    setVisibility(selector, hidden);
+  }
+});
 
-d3.select("#step-five").on("stepin", function (e) {});
+// d3.select("#step-five").on("stepin", function (e) {});
 
 d3.select("#noun-step-one").on("stepout", function (e) {
   console.log("back");

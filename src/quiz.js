@@ -83,6 +83,8 @@ function renderClothingChips() {
       "inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-200 dark:text-blue-800 cursor-pointer";
     chip.innerText = item;
     chip.addEventListener("click", () => {
+      chip.classList.remove("bg-blue-100");
+      chip.classList.add("bg-blue-200");
       highlightBoroughs(item);
       showCloseButton(chip);
     });
@@ -101,8 +103,20 @@ function showCloseButton(chip) {
   closeButton.innerHTML = "&times;";
   closeButton.addEventListener("click", (event) => {
     event.stopPropagation(); // Prevent triggering the chip click event
-    chip.classList.remove("bg-yellow-200");
+    const boroughSpan = document.querySelectorAll(".borough");
+    const elementWithYellowClass = Array.from(boroughSpan).filter((element) =>
+      element.classList.contains("bg-yellow-300")
+    );
+    Array.from(elementWithYellowClass).map((i) => {
+      i.classList.remove("bg-yellow-300");
+      i.classList.add("bg-blue-600");
+    });
+
+    chip.classList.remove("bg-blue-200");
+    chip.classList.add("bg-blue-100");
     closeButton.remove();
+
+    // find out if there are other close button
   });
 
   chip.appendChild(closeButton);
@@ -112,13 +126,11 @@ function showCloseButton(chip) {
 }
 
 function highlightBoroughs(clothingItem) {
-  //   boroughSpans.forEach((span) => span.classList.remove("bg-yellow-200"));
   quiz_data.forEach((data) => {
     if (data.clothing.includes(clothingItem)) {
       const boroughSpan = document.getElementById(data.borough.toLowerCase());
       boroughSpan.classList.remove("bg-blue-600");
       boroughSpan.classList.add("bg-yellow-300");
-      console.log(boroughSpan);
     }
   });
 }
@@ -133,6 +145,10 @@ resetBtn.addEventListener("click", () => {
     span.classList.remove("bg-yellow-200");
     span.classList.add("bg-blue-600");
   }
+  // make it gray background
+  resetBtn.classList.remove("bg-blue-700");
+  resetBtn.classList.add("bg-gray-400");
+
   clothingContainer.innerHTML = "";
   if (!clothingContainer.classList.contains("hidden")) {
     renderClothingChips();
