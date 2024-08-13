@@ -226,7 +226,7 @@ d3.select("#noun-step-five").on("stepin", function (e) {
     }
 
     if (d && d.column === "Staten Island" && d.value === "beard") {
-      d3.select(this).classed("highlight", true).text(`🧔‍♂️ bike`);
+      d3.select(this).classed("highlight", true).text(`🧔‍♂️ beard`);
     }
   });
 });
