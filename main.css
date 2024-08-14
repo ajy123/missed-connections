@@ -9,9 +9,9 @@ p {
   font-size: 30px;
   position: absolute;
   left: 100px;
-  animation: moveTrain 20s infinite ease-in-out;
+  /* animation: moveTrain 20s infinite ease-in-out; */
 }
-@keyframes moveTrain {
+/* @keyframes moveTrain {
   0% {
     transform: translateX(0);
   }
@@ -21,7 +21,7 @@ p {
   100% {
     transform: translateX(0);
   }
-}
+} */
 
 iframe {
   margin-top: 2em;
